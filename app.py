@@ -12,7 +12,7 @@ from langchain.callbacks import StreamlitCallbackHandler
 
 load_dotenv()
 
-groq_api_key = os.getenv('GROQ_API_KEY')
+# groq_api_key = os.getenv('GROQ_API_KEY')
 
 arxiv_api_wrapper = ArxivAPIWrapper(top_k_results=1, doc_content_chars_max=300)
 arxiv = ArxivQueryRun(api_wrapper=arxiv_api_wrapper)
@@ -31,7 +31,7 @@ Try more LangChain 🤝 Streamlit Agent examples at [github.com/langchain-ai/str
 
 # sidebar for setting
 st.sidebar.title("Setting")
-api_key = st.sidebar.text_input("Enter Your Groq API Key", type="password")
+groq_api_key = st.sidebar.text_input("Enter Your Groq API Key", type="password")
 
 if "messages" not in  st.session_state:
     st.session_state['messages'] = [
